@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Service\FeeCalculator\Exception;
+
+class InvalidUserTypeException extends \Exception
+{
+    public function __construct()
+    {
+        parent::__construct('Invalid user type');
+    }
+}

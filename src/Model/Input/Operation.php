@@ -4,70 +4,88 @@ namespace App\Model\Input;
 
 class Operation
 {
-    private \DateTime $date;
-    private int $userId;
-    private string $userType;
-    private string $operationType;
-    private int $operationAmount;
-    private string $currency;
+    public const OPERATION_TYPE_DEPOSIT = 'deposit';
+    public const OPERATION_TYPE_WITHDRAW = 'withdraw';
 
-    public function getDate(): \DateTime
+    public const USER_TYPE_PRIVATE = 'private';
+    public const USER_TYPE_BUSINESS = 'business';
+
+    private ?\DateTime $date = null;
+    private ?int $userId = null;
+    private ?string $userType = null;
+    private ?string $operationType = null;
+    private ?float $operationAmount = null;
+    private ?string $currency = null;
+
+    public function getDate(): ?\DateTime
     {
         return $this->date;
     }
 
-    public function setDate(\DateTime $date): void
+    public function setDate(\DateTime $date): self
     {
         $this->date = $date;
+
+        return $this;
     }
 
-    public function getUserId(): int
+    public function getUserId(): ?int
     {
         return $this->userId;
     }
 
-    public function setUserId(int $userId): void
+    public function setUserId(int $userId): self
     {
         $this->userId = $userId;
+
+        return $this;
     }
 
-    public function getUserType(): string
+    public function getUserType(): ?string
     {
         return $this->userType;
     }
 
-    public function setUserType(string $userType): void
+    public function setUserType(string $userType): self
     {
         $this->userType = $userType;
+
+        return $this;
     }
 
-    public function getOperationType(): string
+    public function getOperationType(): ?string
     {
         return $this->operationType;
     }
 
-    public function setOperationType(string $operationType): void
+    public function setOperationType(string $operationType): self
     {
         $this->operationType = $operationType;
+
+        return $this;
     }
 
-    public function getOperationAmount(): int
+    public function getOperationAmount(): ?float
     {
         return $this->operationAmount;
     }
 
-    public function setOperationAmount(int $operationAmount): void
+    public function setOperationAmount(float $operationAmount): self
     {
         $this->operationAmount = $operationAmount;
+
+        return $this;
     }
 
-    public function getCurrency(): string
+    public function getCurrency(): ?string
     {
         return $this->currency;
     }
 
-    public function setCurrency(string $currency): void
+    public function setCurrency(string $currency): self
     {
         $this->currency = $currency;
+
+        return $this;
     }
 }

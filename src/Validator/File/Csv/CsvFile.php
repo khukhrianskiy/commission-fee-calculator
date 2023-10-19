@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Validator\File\Csv;
+
 use Symfony\Component\Validator\Constraints\File;
 
 class CsvFile extends File

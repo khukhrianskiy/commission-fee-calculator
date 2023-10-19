@@ -9,13 +9,3 @@ services:
       - '9000:9000'
     volumes:
       - ./:/var/www/app
-
-  nginx:
-    container_name: nginx
-    image: nginx:stable-alpine
-    ports:
-      - '80:80'
-    volumes:
-      - ./:/var/www/app
-    depends_on:
-      - php
